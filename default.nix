@@ -37,7 +37,7 @@ rustPlatform.buildRustPackage {
     export TMPDIR=/tmp
   '';
 
-  # Nushell's `source` is a parse-time keyword and cannot read command
+  # Nushell's `use` is a parse-time keyword and cannot read command
   # output, so ship the hook as a file users can source by path.
   postInstall = ''
     install -Dm644 hooks/nushell.nu $out/share/direnv-instant/nushell.nu

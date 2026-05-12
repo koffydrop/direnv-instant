@@ -1,5 +1,5 @@
 //! Nushell entry point for `start`. The nu hook cannot react to SIGUSR1
-//! (no trap primitive) nor `source` dynamic command output (parse-time
+//! (no trap primitive) nor `use` dynamic command output (parse-time
 //! const path required), so the binary emits a single compact JSON
 //! record describing internal var changes and the hook applies it via
 //! `load-env` / `hide-env`. Direnv's own export goes to `env_file` as

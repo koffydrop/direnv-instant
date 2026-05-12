@@ -144,10 +144,10 @@ in
         direnv-instant hook fish | source
       '';
 
-      # Nushell's `source` resolves at parse time and cannot evaluate command
-      # output, so source the hook file shipped in the package.
+      # Nushell's `use` resolves at parse time and cannot evaluate command
+      # output, so use the hook file shipped in the package.
       programs.nushell.extraConfig = mkIf cfg.enableNushellIntegration ''
-        source ${cfg.package}/share/direnv-instant/nushell.nu
+        use ${cfg.package}/share/direnv-instant/nushell.nu
       '';
 
       programs.kitty.settings = mkIf cfg.enableKittyIntegration {

@@ -78,9 +78,9 @@ fish (`~/.config/fish/config.fish`):
 direnv-instant hook fish | source
 ```
 
-nushell: there's no `hook nu | source` one-liner because nushell's `source` is
+nushell: there's no `hook nu | use` one-liner because nushell's `use` is
 parse-time only. The hook ships at `share/direnv-instant/nushell.nu`; the
-home-manager module sources it for you when
+home-manager module uses it for you when
 `programs.direnv-instant.enableNushellIntegration` is enabled. Nushell also
 can't trap SIGUSR1, so the hook polls the env file on each prompt — new env
 shows up on the next prompt after direnv finishes.

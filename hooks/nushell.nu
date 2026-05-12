@@ -3,7 +3,7 @@
 # Nushell has no signal-trap mechanism, so unlike the bash/zsh/fish hooks
 # this one cannot react to SIGUSR1 from the daemon. Instead it polls the
 # env file at pre_prompt and pre_execution. The binary speaks JSON because
-# `source` in nu is parse-time and cannot evaluate dynamic command output.
+# `use` in nu is parse-time and cannot evaluate dynamic command output.
 #
 # All env mutations happen in a single `--env` def call to dodge a nushell
 # quirk where hide-env after load-env across separate `--env` defs in the
